@@ -159,7 +159,7 @@ int LSM6DS3Class::readTemperature(float& t)
     return 0;
   }
 
-  t = data[0] / 16.0 + 25;
+  t = data[0] / 256.0 + 25.0; //convert register value to degree C
 
   return 1;
 }
